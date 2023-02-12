@@ -34,7 +34,7 @@ export default function Home() {
   }, []);
   const socketInitializer = async () => {
     // We just call it because we don't need anything else out of it
-    await fetch("/api/socket");
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/socket`);
 
     socket = io();
     socket.on("newIncomingMessage", (msg) => {
